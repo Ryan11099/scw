@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: scw-webui
+  redis:
+    host: 192.168.118.254
+    port: 6379
+    jedis:
+      pool:
+        max-idle: 100 #最大连接数
+  session:
+    timeout:
+    store-type: redis
+  thymeleaf:
+    cache: false
+    #suffix: 
+    #prefix: 
+server:
+  port: 10000
+eureka:
+  instance:
+    appname: scw-webui
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+feign:
+  hystrix:
+    enabled: true #开启熔断保护
+  
+      
